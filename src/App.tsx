@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Attribution } from "./components/Attribution";
 import { PersonTable } from "./components/PersonTable";
 import { getParams } from "./helpers/get-params";
 import { Person } from "./models/Person";
@@ -58,27 +59,43 @@ export function App() {
 
   return (
     <>
-      <div className="row">
-        <div className="col-md-3 sticky-top bg-white shadow-sm">
-          <div className="pt-3 pb-md-3 sticky-top">
-            <div className="mb-3">
-              <label className="form-label">Search by name</label>
+      <div className="sticky-top bg-white shadow-sm">
+        <div className="container py-3">
+          <div className="row">
+            <div className="col-md-8 mx-auto text-center">
+              <label className="form-label d-none d-md-block">
+                Search by name
+              </label>
               <input
                 type="text"
                 className="form-control"
                 defaultValue={getParams().get("query") ?? ""}
                 onChange={(e) => handleSearch(e.target.value)}
                 autoFocus
-                placeholder="e.g., John Doe"
+                placeholder="Type to search by name"
               />
+              {count > 0 && (
+                <div className="form-text">
+                  Showing {persons.length} / {count} entries
+                </div>
+              )}
             </div>
           </div>
         </div>
-        <div className="col-md-9">
-          <div className="py-3">
+      </div>
+      <div className="container py-3">
+        <div className="row">
+          <div className="col-md-8 mx-auto">
             {count === -1 && <div className="alert alert-info">Loading...</div>}
             {count === 0 && <div className="alert alert-warning">No data</div>}
             {count > 0 && <PersonTable persons={persons} />}
+          </div>
+        </div>
+      </div>
+      <div className="container">
+        <div className="row">
+          <div className="col-md-8 mx-auto">
+            <Attribution />
           </div>
         </div>
       </div>

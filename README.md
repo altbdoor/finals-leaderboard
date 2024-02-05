@@ -4,6 +4,6 @@ _Because the original leaderboard was loading a 10,000 entry JSON file, and doin
 
 Made with:
 
-- React
+- React with Vite
 - SQLite WASM
 - Bootstrap
