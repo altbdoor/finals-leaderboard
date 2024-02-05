@@ -94,7 +94,7 @@ export function App() {
       </div>
       <div className="container">
         <div className="row">
-          <div className="col-md-8 mx-auto">
+          <div className="col-md-8 mx-auto pb-3">
             <Attribution />
           </div>
         </div>

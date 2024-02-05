@@ -89,15 +89,20 @@ async function initCode() {
   ] as const;
 
   const data: InputPerson[] = await fetch(dataUrl).then((res) => res.json());
+  const insertPerson = db.prepare(
+    `INSERT INTO persons VALUES (${rawKeys.map(() => "?").join(", ")});`,
+  );
 
   db.exec("BEGIN TRANSACTION;");
-  data.forEach((datum) => {
-    db.exec({
-      sql: `INSERT INTO persons VALUES (${rawKeys.map(() => "?").join(", ")});`,
-      bind: rawKeys.map((key) => datum[key]),
+  try {
+    data.forEach((datum) => {
+      insertPerson.bind(rawKeys.map((key) => datum[key])).stepReset();
     });
-  });
-  db.exec("COMMIT;");
+    db.exec("COMMIT;");
+  } catch (err) {
+    console.error(err);
+    db.exec("ROLLBACK;");
+  }
 
   return db;
 }
