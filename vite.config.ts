@@ -7,4 +7,8 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ["@sqlite.org/sqlite-wasm"],
   },
+  build: {
+    reportCompressedSize: false,
+    assetsInlineLimit: 0,
+  },
 });

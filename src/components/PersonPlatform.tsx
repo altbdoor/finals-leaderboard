@@ -1,3 +1,7 @@
+import PlaystationIcon from "../assets/icons/playstation.svg?url";
+import SteamIcon from "../assets/icons/steam.svg?url";
+import XboxIcon from "../assets/icons/xbox.svg?url";
+
 interface PersonPlatformProps {
   steam?: string;
   xbox?: string;
@@ -11,7 +15,7 @@ export function PersonPlatform(props: PersonPlatformProps) {
         <>
           <span className="badge text-bg-dark">
             <span className="text-light d-flex align-items-center gap-2">
-              <img src="/icons/steam.svg" width={16} alt="Steam" />
+              <img src={SteamIcon} width={16} alt="Steam" />
               {props.steam}
             </span>
           </span>{" "}
@@ -22,7 +26,7 @@ export function PersonPlatform(props: PersonPlatformProps) {
         <>
           <span className="badge text-bg-success">
             <span className="text-light d-flex align-items-center gap-2">
-              <img src="/icons/xbox.svg" width={16} alt="Xbox" />
+              <img src={XboxIcon} width={16} alt="Xbox" />
               {props.xbox}
             </span>
           </span>{" "}
@@ -33,7 +37,7 @@ export function PersonPlatform(props: PersonPlatformProps) {
         <>
           <span className="badge text-bg-primary">
             <span className="text-light d-flex align-items-center gap-2">
-              <img src="/icons/playstation.svg" width={16} alt="PSN" />
+              <img src={PlaystationIcon} width={16} alt="PSN" />
               {props.psn}
             </span>
           </span>{" "}
