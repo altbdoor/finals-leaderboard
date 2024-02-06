@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@sqlite.org/sqlite-wasm": "^3.45.1-build1",
+    "debounce-fn": "^6.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

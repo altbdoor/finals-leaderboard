@@ -1,3 +1,4 @@
+import debounceFn from "debounce-fn";
 import { useEffect, useRef, useState } from "react";
 import { Attribution } from "./components/Attribution";
 import { PersonTable } from "./components/PersonTable";
@@ -11,6 +12,15 @@ export function App() {
 
   const [count, setCount] = useState(-1);
   const [persons, setPersons] = useState<Person[]>([]);
+
+  const queryWorker = debounceFn(
+    () => {
+      const params = getParams();
+      const worker = workerRef.current!;
+      worker.port.postMessage(params.get("query") ?? "");
+    },
+    { wait: 300 },
+  );
 
   useEffect(() => {
     const worker = new Worker();
@@ -36,18 +46,12 @@ export function App() {
 
     workerRef.current = worker;
     return () => worker.port.close();
-  }, []);
+  }, [queryWorker]);
 
   useEffect(() => {
     window.addEventListener("hashchange", queryWorker);
     return () => window.removeEventListener("hashchange", queryWorker);
-  }, []);
-
-  const queryWorker = () => {
-    const params = getParams();
-    const worker = workerRef.current!;
-    worker.port.postMessage(params.get("query") ?? "");
-  };
+  }, [queryWorker]);
 
   const handleSearch = (query: string) => {
     const params = getParams();
