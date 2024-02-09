@@ -15,8 +15,8 @@ export function PersonFame(props: { fame: number }) {
       <img
         src={`https://storage.googleapis.com/embark-discovery-leaderboard/img/${imgName}.png`}
         width={48}
+        height={48}
         alt={rank.name}
-        title={rank.name}
       />
       <div className="small">
         {rank.name} <br />

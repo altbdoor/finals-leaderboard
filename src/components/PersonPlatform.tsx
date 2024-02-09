@@ -15,7 +15,7 @@ export function PersonPlatform(props: PersonPlatformProps) {
         <>
           <span className="badge text-bg-dark">
             <span className="text-light d-flex align-items-center gap-2">
-              <img src={SteamIcon} width={16} alt="Steam" />
+              <img src={SteamIcon} width={16} height={16} alt="Steam" />
               {props.steam}
             </span>
           </span>{" "}
@@ -26,7 +26,7 @@ export function PersonPlatform(props: PersonPlatformProps) {
         <>
           <span className="badge text-bg-success">
             <span className="text-light d-flex align-items-center gap-2">
-              <img src={XboxIcon} width={16} alt="Xbox" />
+              <img src={XboxIcon} width={16} height={16} alt="Xbox" />
               {props.xbox}
             </span>
           </span>{" "}
@@ -37,7 +37,7 @@ export function PersonPlatform(props: PersonPlatformProps) {
         <>
           <span className="badge text-bg-primary">
             <span className="text-light d-flex align-items-center gap-2">
-              <img src={PlaystationIcon} width={16} alt="PSN" />
+              <img src={PlaystationIcon} width={16} height={16} alt="PSN" />
               {props.psn}
             </span>
           </span>{" "}
