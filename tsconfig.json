@@ -19,6 +19,12 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
+
+    // preact
+    "jsxImportSource": "preact",
+    "paths": {
+      "react": ["./node_modules/preact/compat/"],
+    },
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }],

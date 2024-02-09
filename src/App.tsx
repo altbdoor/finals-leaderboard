@@ -74,7 +74,9 @@ export function App() {
                 type="text"
                 className="form-control"
                 defaultValue={getParams().get("query") ?? ""}
-                onChange={(e) => handleSearch(e.target.value)}
+                onChange={(e) =>
+                  handleSearch((e.target as HTMLInputElement).value)
+                }
                 autoFocus
                 placeholder="Type to search by name"
               />

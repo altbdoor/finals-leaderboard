@@ -11,4 +11,9 @@ export default defineConfig({
     reportCompressedSize: false,
     assetsInlineLimit: 0,
   },
+  resolve: {
+    alias: {
+      react: "preact/compat",
+    },
+  },
 });

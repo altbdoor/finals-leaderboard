@@ -8,7 +8,7 @@ export function Attribution() {
       <p>Made with:</p>
       <ul>
         <li>
-          <a href="https://react.dev/">React with Vite</a>
+          <a href="https://preactjs.com/">Preact with Vite</a>
         </li>
         <li>
           <a href="https://github.com/sqlite/sqlite-wasm">SQLite WASM</a>
@@ -35,8 +35,8 @@ export function Attribution() {
       <p>So hey, why not try to do better?</p>
 
       <p>
-        For old times sake with classic React experience, I went with React and
-        Vite.
+        For old times sake with classic React experience, I went with{" "}
+        <del>React</del> Preact and Vite.
       </p>
 
       <p>

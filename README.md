@@ -4,7 +4,7 @@ _Because the original leaderboard was loading a 10,000 entry JSON file, and doin
 
 Made with:
 
-- [React with Vite](https://react.dev/)
+- [Preact with Vite](https://preactjs.com/)
 - [SQLite WASM](https://github.com/sqlite/sqlite-wasm)
 - [Bootstrap](https://getbootstrap.com/)
 - [Chequered flag from twemoji](https://twemoji.twitter.com/)
