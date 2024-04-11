@@ -61,7 +61,7 @@ async function initCode() {
 
   db.exec(`
     CREATE TABLE persons (
-      name TEXT NOT NULL PRIMARY KEY,
+      name TEXT NOT NULL,
       rank INTEGER NOT NULL,
       fame INTEGER NOT NULL,
       original_fame INTEGER NOT NULL,
@@ -71,6 +71,7 @@ async function initCode() {
       xbox TEXT NOT NULL,
       psn TEXT NOT NULL
     );
+    CREATE INDEX idx_name ON persons(name);
   `);
 
   const dataUrl =
